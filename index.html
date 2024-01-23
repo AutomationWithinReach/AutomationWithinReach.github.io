@@ -1,4 +1,4 @@
-<model-viewer src="5007344.glb" tone-mapping="commerce" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
+<model-viewer src="roachjp4.github.io/models/5007344.glb" poster="roachjp4.github.io/models/model_1.PNG" tone-mapping="commerce" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
   
   <button slot="ar-button" id="ar-button">
     View in your space
@@ -14,15 +14,15 @@
 
   <div class="slider">
     <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'Part 1')" style="background-image: url('../../assets/ShopifyModels/Chair.webp');">
+      <button class="slide selected" onclick="switchSrc(this, '5007344')" style="background-image: url('roachjp4.github.io/models/model_1.PNG');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Mixer')" style="background-image: url('../../assets/ShopifyModels/Mixer.webp');">
+      </button><button class="slide" onclick="switchSrc(this, '5004015')" style="background-image: url('roachjp4.github.io/models/model_1.PNG');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'GeoPlanter')" style="background-image: url('../../assets/ShopifyModels/GeoPlanter.webp');">
+      </button><button class="slide" onclick="switchSrc(this, '5004015')" style="background-image: url('roachjp4.github.io/models/model_1.PNG');">
       
-      </button><button class="slide" onclick="switchSrc(this, 'ToyTrain')" style="background-image: url('../../assets/ShopifyModels/ToyTrain.webp');">
+      </button><button class="slide" onclick="switchSrc(this, '5004015')" style="background-image: url('roachjp4.github.io/models/model_1.PNG');">
       
-      </button><button class="slide" onclick="switchSrc(this, 'Canoe')" style="background-image: url('../../assets/ShopifyModels/Canoe.webp');">    
+      </button><button class="slide" onclick="switchSrc(this, '5004015')" style="background-image: url('roachjp4.github.io/models/model_1.PNG');">    
     </button></div>
   </div>
 </model-viewer>
@@ -31,9 +31,9 @@
   const modelViewer = document.querySelector("model-viewer");
 
   window.switchSrc = (element, name) => {
-    const base = "../../assets/ShopifyModels/" + name;
+    const base = "roachjp4.github.io/models/" + name;
     modelViewer.src = base + '.glb';
-    modelViewer.poster = base + '.webp';
+    modelViewer.poster = base + '.PNG';
     const slides = document.querySelectorAll(".slide");
     slides.forEach((element) => {element.classList.remove("selected");});
     element.classList.add("selected");
