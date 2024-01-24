@@ -46,11 +46,11 @@
   </body>
 
 <script type="module">
+  
   const modelViewer = document.querySelector("model-viewer");
-
   const modelViewerColor = document.querySelector("model-viewer#color");
   const [material] = modelViewerColor.model.materials;
-  material.pbrMetallicRoughness.setBaseColorFactor(#ff0000);
+  material.pbrMetallicRoughness.setBaseColorFactor("#ff0000");
 
   window.switchSrc = (element, name) => {
     const base = "models/" + name;
