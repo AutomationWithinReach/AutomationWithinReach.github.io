@@ -48,7 +48,9 @@
 <script type="module">
   const modelViewer = document.querySelector("model-viewer");
 
-   material.pbrMetallicRoughness.setBaseColorFactor("Grey");
+  const modelViewerColor = document.querySelector("model-viewer#color");
+  const [material] = modelViewerColor.model.materials;
+  material.pbrMetallicRoughness.setBaseColorFactor("Grey");
 
   window.switchSrc = (element, name) => {
     const base = "models/" + name;
