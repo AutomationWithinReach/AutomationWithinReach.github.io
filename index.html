@@ -53,12 +53,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
   let material = modelViewerParameters.model.materials[0];
 
   material.pbrMetallicRoughness.setBaseColorFactor("#a2a4a6");
-
-  document.querySelector('#dimension-demo-controls').addEventListener('click', (event) => {
-    material.pbrMetallicRoughness.setMetallicFactor(0.8);
-  });
   
-  material.pbrMetallicRoughness.setMetallicFactor0(0.8);
+  material.pbrMetallicRoughness.setMetallicFactor(0.8);
   material.pbrMetallicRoughness.setRoughnessFactor(0.2);
 
 });
