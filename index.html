@@ -9,11 +9,11 @@
   </head>
   <body>
 
-     <span id="qr-code">
+     <div id="qr-code">
           <img id="qr" src="qr-code.png" width="10%" height="10%">
             <div id="txt"> Scan The QR Code to View This Model In Your Space</div>
           <img id="awr" src="awr-logo.png" width="10%" height="10%">
-      </span>
+      </div>
     
   <!-- <model-viewer> HTML element -->
 <model-viewer id="dimension-demo" src="models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" shadow-intensity="1">
@@ -226,6 +226,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
 
   .dot{
     display: none;
+  }
+
+  #qr-code {
+    display: inline-block;
   }
   .qr{
     horizontal-align: left;
