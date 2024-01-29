@@ -21,6 +21,7 @@ model-viewer {
 
 .qr-code {
     padding: 10px 0px 10px 40px;
+    float:right;
 }
 
 .progress-bar {
