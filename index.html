@@ -40,11 +40,11 @@
     <input id="show-dimensions" type="checkbox" checked="true">
      <div>
       <p>Metalness: <span id="metalness-value"></span></p>
-      <input id="metalness" type="range" min="0" max="1" step="0.01" value="1">
+      <input id="metalness" type="range" min="0" max="1" step="0.01" value="0.5">
     </div>
     <div>
       <p>Roughness: <span id="roughness-value"></span></p>
-      <input id="roughness" type="range" min="0" max="1" step="0.01" value="0">
+      <input id="roughness" type="range" min="0" max="1" step="0.01" value="0.2">
     </div>
   </div>
 </model-viewer>
@@ -55,7 +55,7 @@
 
   <script>
 const modelViewerParameters = document.querySelector("model-viewer#dimension-demo");
-modelViewerParameters.addEventListener("load", (ev) => {
+// modelViewerParameters.addEventListener("load", (ev) => {
 
   let material = modelViewerParameters.model.materials[0];
 
@@ -68,16 +68,16 @@ modelViewerParameters.addEventListener("load", (ev) => {
   // Defaults to gold
   material.pbrMetallicRoughness.setBaseColorFactor("#6b6d70");
 
-  document.querySelector('#metalness').addEventListener('input', (event) => {
+  //document.querySelector('#metalness').addEventListener('input', (event) => {
     material.pbrMetallicRoughness.setMetallicFactor(event.target.value);
     metalnessDisplay.textContent = event.target.value;
-  });
+  //});
 
-  document.querySelector('#roughness').addEventListener('input', (event) => {
+  //document.querySelector('#roughness').addEventListener('input', (event) => {
     material.pbrMetallicRoughness.setRoughnessFactor(event.target.value);
     roughnessDisplay.textContent = event.target.value;
-  });
-});
+  //});
+//});
 </script>
     
 <script type="module">
