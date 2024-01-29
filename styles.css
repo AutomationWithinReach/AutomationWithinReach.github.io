@@ -20,7 +20,7 @@ model-viewer {
 }
 
 .controls {
-	width: fit-content;
+  width: 10%;
 }
 
 .progress-bar {
@@ -60,7 +60,6 @@ model-viewer {
   background-color: #fff;
   position: absolute;
   left: 0%;
-  transform: translateX(-50%);
   white-space: nowrap;
   bottom: 0px;
   padding: 0px 0px 0px 0px;
