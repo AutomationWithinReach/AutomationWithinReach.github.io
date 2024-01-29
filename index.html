@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- <model-viewer> HTML element -->
-<model-viewer id="dimension-demo" ar ar-modes="webxr" ar-scale="fixed" camera-orbit="-30deg auto auto" max-camera-orbit="auto 100deg auto" shadow-intensity="1" camera-controls touch-action="pan-y" src="models/5007344.glb" tone-mapping="commerce" alt="A 3D model of an armchair.">
+<model-viewer id="dimension-demo" ar ar-modes="webxr" ar-scale="fixed"  shadow-intensity="1" camera-controls touch-action="pan-y" src="models/5007344.glb" tone-mapping="commerce" >
   <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
   <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
   <button slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
@@ -44,6 +44,28 @@
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js"></script>
   </body>
+
+  <script>
+const modelViewerParameters = document.querySelector('#dimension-demo');
+
+modelViewerParameters.addEventListener("load", (ev) => {
+
+  let material = modelViewerParameters.model.materials[0];
+
+  let metalnessDisplay = document.querySelector("#metalness-value");
+  let roughnessDisplay = document.querySelector("#roughness-value");
+
+  metalnessDisplay.textContent = material.pbrMetallicRoughness.metallicFactor;
+  roughnessDisplay.textContent = material.pbrMetallicRoughness.roughnessFactor;
+
+  // Defaults to gold
+  material.pbrMetallicRoughness.setBaseColorFactor([0.7294, 0.5333, 0.0392]);
+  
+  material.pbrMetallicRoughness.setMetallicFactor(1);
+  material.pbrMetallicRoughness.setRoughnessFactor(1);
+
+
+</script>
     
 <script type="module">
   const modelViewer = document.querySelector('#dimension-demo');
