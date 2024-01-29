@@ -10,9 +10,9 @@
   <body>
 
      <div id="qr-code" class="con">
-          <div class="grid-item"><img id="qr" src="qr-code.png" width="50%" height="50%"></div>
+          <div class="grid-item"><img id="qr" src="qr-code.png"></div>
           <div class="grid-item">Scan The QR Code To View This Model In Your Space</div>
-          <div class="grid-item">3</div>
+          <div class="grid-item"><img src="awr-logo.png"></div>
       </div>
   
     
@@ -238,11 +238,12 @@ modelViewerParameters.addEventListener("load", (ev) => {
   .grid-item {
             background-color: white;
             border: 1px white;
-            padding: 20px;
-            font-size: 50px;
+            padding: 10px;
+            font-size: larger;
             text-align:center;
             vertical-align:center;
             color:green;
+            object-fit:cover;
         }
 
   .dim{
