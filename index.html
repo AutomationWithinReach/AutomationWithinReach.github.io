@@ -10,9 +10,9 @@
   <body>
 
      <div id="qr-code" class="con">
-          <div class="grid-item"><img id="qr" src="qr-code.png" max-width=20%></div>
-          <div class="grid-item">Scan The QR Code To View This Model In Your Space</div>
-          <div class="grid-item"><img src="awr-logo.png"></div>
+         <img class="qr" src="qr-code.png" max-width=20%>
+          <div class="txt">Scan The QR Code To View This Model In Your Space</div>
+          <img class="awr" src="awr-logo.png">
       </div>
   
     
@@ -230,21 +230,25 @@ modelViewerParameters.addEventListener("load", (ev) => {
   }
 
   .con{
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      background-color: white;
-      padding: 5px;
+      display: flex;
   }
-  .grid-item {
-            background-color: white;
-            border: 1px white;
-            padding: 10px;
-            font-size: larger;
-            text-align:center;
-            vertical-align:center;
-            color:green;
-            object-fit:cover;
-        }
+  .qr{
+      object-fit:cover;
+      max-width:30%;
+      align-items:start;
+  }
+  .txt{
+      font-size: larger;
+      text-align:center;
+      vertical-align:center;
+      color:green;
+      align-items:center;
+  }
+  .awr{
+      object-fit:cover;
+      max-width:30%;
+      align-items:end;
+  }
 
   .dim{
     background: #fff;
