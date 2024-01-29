@@ -10,9 +10,9 @@
   <body>
 
      <div id="qr-code">
-          <img src="qr-code.png" width="10%" height="10%">
+          <img id="qr" src="qr-code.png" width="10%" height="10%">
             <div id="txt"> Scan The QR Code to View This Model In Your Space</div>
-          <img src="qr-code.png" width="10%" height="10%">
+          <img id="awr" src="awr-logo.webp" width="10%" height="10%">
       </div>
     
   <!-- <model-viewer> HTML element -->
@@ -226,6 +226,20 @@ modelViewerParameters.addEventListener("load", (ev) => {
 
   .dot{
     display: none;
+  }
+  .qr{
+    horizontal-align: left;
+    vertical-align: middle;
+  }
+
+  .txt{
+    horizontal-align: middle;
+    vertical-align: middle;
+  }
+
+   .awr{
+    horizontal-align: right;
+    vertical-align: middle;
   }
 
   .dim{
