@@ -52,11 +52,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     
   let material = modelViewerParameters.model.materials[0];
 
-  let metalnessDisplay = document.querySelector("#metalness-value");
-  let roughnessDisplay = document.querySelector("#roughness-value");
-
-
-  material.pbrMetallicRoughness.setBaseColorFactor("#6b6d70");
+  material.pbrMetallicRoughness.setBaseColorFactor("#a2a4a6");
   material.pbrMetallicRoughness.setMetallicFactor0(0.5);
   material.pbrMetallicRoughness.setRoughnessFactor(0.2);
 
