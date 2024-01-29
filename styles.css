@@ -19,6 +19,10 @@ model-viewer {
   background-color: #ffffff;
 }
 
+.controls {
+	width: fit-content;
+}
+
 .progress-bar {
   display: block;
   width: 33%;
