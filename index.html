@@ -75,7 +75,7 @@
 
   <div id="controls" class="dim">
     <label for="src">Product:</label>
-    <select id="src">
+    <select id="src" onchange="myFunction()">
       <option value="models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb">5002752</option>
       <option value="models/5004015.glb">5004015</option>
       <option value="models/5004027_REV-A-MultiGripBaseJawsOD.glb">5004027</option>
@@ -150,6 +150,18 @@ modelViewerParameters.addEventListener("load", (ev) => {
   modelViewer.addEventListener('ar-status', (event) => {
     setVisibility(checkbox.checked && event.detail.status !== 'session-started');
   });
+
+  function myFunction() {
+    var x = document.getElementById("src").value;
+    if(x == "5002752"){
+       document.getElementById("spot").data-position = "0 0 0";
+       document.getElementById("ant").innerHTML = "test1";
+    }
+   if(x == "5004015"){
+       document.getElementById("spot").data-position = "0 0.1 0";
+       document.getElementById("ant").innerHTML = "test2";
+    }
+  }
 
   // update svg
   function drawLine(svgLine, dotHotspot1, dotHotspot2, dimensionHotspot) {
