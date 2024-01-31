@@ -187,12 +187,14 @@ modelViewerParameters.addEventListener("load", (ev) => {
 
     var x = document.getElementById("src").value;
     if(x == "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb"){
+        document.getElementById("ant").remove('hide');;
+       document.getElementById("spot").remove('hide');;
        document.getElementById("ant").innerHTML = "test1";
        document.getElementById("spot").setAttribute('position', "0 0.1 0.1");
     }
     if(x == "models/5004015.glb"){
-       document.getElementById("ant").innerHTML = "test2";
-       document.getElementById("spot").setAttribute('position', "0 0.1 0");
+       document.getElementById("ant").add('hide');;
+       document.getElementById("spot").add('hide');;
     }
     
     modelViewer.updateHotspot({
