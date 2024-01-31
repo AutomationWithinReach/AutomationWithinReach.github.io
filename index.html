@@ -241,32 +241,51 @@ modelViewerParameters.addEventListener("load", (ev) => {
        document.getElementById("ant-2").setAttribute('class', "annotation");
        document.getElementById("spot-2").setAttribute('class', "hotspot");
        document.getElementById("ant-2").innerHTML = "x";
-       document.getElementById("spot-2").setAttribute('position', "0.1 0 0");
+       document.getElementById("spot-2").setAttribute('position', "0.5 0 0");
        document.getElementById("ant-3").setAttribute('class', "annotation");
        document.getElementById("spot-3").setAttribute('class', "hotspot");
        document.getElementById("ant-3").innerHTML = "y";
-       document.getElementById("spot-3").setAttribute('position', "0 0.1 0");
+       document.getElementById("spot-3").setAttribute('position', "0 0.5 0");
        document.getElementById("ant-4").setAttribute('class', "annotation");
        document.getElementById("spot-4").setAttribute('class', "hotspot");
        document.getElementById("ant-4").innerHTML = "z";
-       document.getElementById("spot-4").setAttribute('position', "0 0 0.1");
+       document.getElementById("spot-4").setAttribute('position', "0 0 0.5");
     }
     if(x == "models/5004015.glb"){
        document.getElementById("ant-1").setAttribute('class', "annotation");
        document.getElementById("spot-1").setAttribute('class', "hotspot");
-       document.getElementById("ant-1").innerHTML = "test1";
-       document.getElementById("spot-1").setAttribute('position', `${center.x + x2} ${center.y - y2} ${center.z + z2}`);
+       document.getElementById("ant-1").innerHTML = "zero";
+       document.getElementById("spot-1").setAttribute('position', "0m 0m 0m");
        document.getElementById("ant-2").setAttribute('class', "annotation");
        document.getElementById("spot-2").setAttribute('class', "hotspot");
-       document.getElementById("ant-2").innerHTML = "test2";
-       document.getElementById("spot-2").setAttribute('position', "0 0.1 0.1");
+       document.getElementById("ant-2").innerHTML = "x";
+       document.getElementById("spot-2").setAttribute('position', "0.1m 0m 0m");
+       document.getElementById("ant-3").setAttribute('class', "annotation");
+       document.getElementById("spot-3").setAttribute('class', "hotspot");
+       document.getElementById("ant-3").innerHTML = "y";
+       document.getElementById("spot-3").setAttribute('position', "0m 0.1m 0m");
+       document.getElementById("ant-4").setAttribute('class', "annotation");
+       document.getElementById("spot-4").setAttribute('class', "hotspot");
+       document.getElementById("ant-4").innerHTML = "z";
+       document.getElementById("spot-4").setAttribute('position', "0m 0m 0.1m");
     }
     if(x == "models/5007344.glb"){
        document.getElementById("ant-1").setAttribute('class', "annotation");
        document.getElementById("spot-1").setAttribute('class', "hotspot");
-       document.getElementById("ant-1").innerHTML = "Pin";
-       document.getElementById("spot-1").setAttribute('data-position', "0.047953212854735305 -0.03208109944736215 -0.044870875775814056");
-       document.getElementById("spot-1").setAttribute('data-normal', "0 0 -1");
+       document.getElementById("ant-1").innerHTML = "zero";
+       document.getElementById("spot-1").setAttribute('data-position', "0 0 0");
+       document.getElementById("ant-2").setAttribute('class', "annotation");
+       document.getElementById("spot-2").setAttribute('class', "hotspot");
+       document.getElementById("ant-2").innerHTML = "x";
+       document.getElementById("spot-2").setAttribute('data-position', "0.1 0 0");
+       document.getElementById("ant-3").setAttribute('class', "annotation");
+       document.getElementById("spot-3").setAttribute('class', "hotspot");
+       document.getElementById("ant-3").innerHTML = "y";
+       document.getElementById("spot-3").setAttribute('data-position', "0 0.1 0");
+       document.getElementById("ant-4").setAttribute('class', "annotation");
+       document.getElementById("spot-4").setAttribute('class', "hotspot");
+       document.getElementById("ant-4").innerHTML = "z";
+       document.getElementById("spot-4").setAttribute('data-position', "0 0 0.1");
     }
     
     modelViewer.updateHotspot({
