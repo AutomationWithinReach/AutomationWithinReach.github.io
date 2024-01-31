@@ -73,6 +73,10 @@
     <line class="dimensionLine"></line>
   </svg>
 
+  <button id="spot" class="hotspot" slot="hotspot-hand" data-position="0.1 0 0" data-normal="0 0 0">
+    <div id="ant" class="annotation">This hotspot disappears completely</div>
+  </button>
+
   <div id="controls" class="dim">
     <label for="src">Product:</label>
     <select id="src">
@@ -89,12 +93,6 @@
     <label for="show-dimensions">Show Dimensions:</label>
     <input id="show-dimensions" type="checkbox" checked="true">
   </div>
-
- 
-  <button class="hotspot" slot="hotspot-hand" data-position="0.1 0 0" data-normal="0 0 0">
-    <div class="annotation">This hotspot disappears completely</div>
-  </button>
- 
   
 </model-viewer>
  <script src="script.js"></script>
