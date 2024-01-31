@@ -98,7 +98,7 @@
   </svg>
 
    <button id="spot-1" class="hotspot" slot="slot-1" data-position="0 0 0" data-normal="0 0 0"><div id="ant-1" class="annotation">Default</div></button>
-   <button id="spot-2" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-2" class="annotation">Default</div></button>
+   <button id="spot-2" class="hotspot" slot="slot-2" data-position="0 0 0" data-normal="0 0 0"><div id="ant-2" class="annotation">Default</div></button>
    <button id="spot-3" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-3" class="annotation">Default</div></button>
    <button id="spot-4" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-4" class="annotation">Default</div></button>
    <button id="spot-5" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-5" class="annotation">Default</div></button>
@@ -247,7 +247,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
        document.getElementById("ant-1").setAttribute('class', "annotation");
        document.getElementById("spot-1").setAttribute('class', "hotspot");
        document.getElementById("ant-1").innerHTML = "x";
-      
 
       modelViewer.updateHotspot({
         name: 'slot-1',
@@ -259,10 +258,17 @@ modelViewerParameters.addEventListener("load", (ev) => {
        document.getElementById("ant-2").setAttribute('class', "annotation");
        document.getElementById("spot-2").setAttribute('class', "hotspot");
        document.getElementById("ant-2").innerHTML = "x";
-       document.getElementById("spot-2").setAttribute('data-position', "0 0 0");
+
+      modelViewer.updateHotspot({
+        name: 'slot-2',
+        position: `${center.x - x2} ${center.y - y2} ${center.z - z2}`
+      });
     }
     if(x == "models/5007344.glb"){
-      
+      document.getElementById("ant-3").setAttribute('class', "annotation");
+       document.getElementById("spot-3").setAttribute('class', "hotspot");
+       document.getElementById("ant-3").innerHTML = "x";
+       document.getElementById("spot-3").setAttribute('data-position', "0 0 0");
     }
     
     modelViewer.updateHotspot({
