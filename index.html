@@ -188,9 +188,11 @@ modelViewerParameters.addEventListener("load", (ev) => {
     var x = document.getElementById("src").value;
     if(x == "5002752"){
        document.getElementById("ant").innerHTML = "test1";
+       document.getElementById("src")setAttribute('position', "0 0.1 0.1");
     }
-   if(x == "5004015"){
+    if(x == "5004015"){
        document.getElementById("ant").innerHTML = "test2";
+       document.getElementById("src")setAttribute('position', "0 0.1 0");
     }
 
     modelViewer.updateHotspot({
