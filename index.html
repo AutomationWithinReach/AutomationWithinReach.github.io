@@ -88,9 +88,16 @@
     <line class="dimensionLine"></line>
   </svg>
 
-   <button id="spot" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0">
-    <div id="ant" class="annotation">This hotspot disappears completely</div>
-  </button>
+   <button id="spot-1" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-1" class="annotation">Default</div></button>
+   <button id="spot-2" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-2" class="annotation">Default</div></button>
+   <button id="spot-3" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-3" class="annotation">Default</div></button>
+   <button id="spot-4" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-4" class="annotation">Default</div></button>
+   <button id="spot-5" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-5" class="annotation">Default</div></button>
+   <button id="spot-6" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-6" class="annotation">Default</div></button>
+   <button id="spot-7" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-7" class="annotation">Default</div></button>
+   <button id="spot-8" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-8" class="annotation">Default</div></button>
+   <button id="spot-9" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-9" class="annotation">Default</div></button>
+   <button id="spot-10" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-10" class="annotation">Default</div></button>
 
   <div id="controls" class="dim">
     <label for="src">Product:</label>
@@ -194,7 +201,26 @@ modelViewerParameters.addEventListener("load", (ev) => {
   };
 
   function clearAnnotations() {
-   
+    document.getElementById("ant-1").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-1").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-2").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-2").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-3").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-3").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-4").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-4").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-5").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-5").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-6").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-6").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-7").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-7").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-8").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-8").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-9").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-9").setAttribute('class', "hidden-hotspot");
+    document.getElementById("ant-10").setAttribute('class', "hidden-annotation");
+      document.getElementById("spot-10").setAttribute('class', "hidden-hotspot");
   }
 
   modelViewer.addEventListener('load', () => {
@@ -204,16 +230,24 @@ modelViewerParameters.addEventListener("load", (ev) => {
     const y2 = size.y / 2;
     const z2 = size.z / 2;
 
+    clearAnnotations();
+
     var x = document.getElementById("src").value;
     if(x == "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb"){
-       document.getElementById("ant").setAttribute('class', "annotation");
-       document.getElementById("spot").setAttribute('class', "hotspot");
-       document.getElementById("ant").innerHTML = "test1";
-       document.getElementById("spot").setAttribute('position', "0 0.1 0.1");
+       document.getElementById("ant-1").setAttribute('class', "annotation");
+       document.getElementById("spot-1").setAttribute('class', "hotspot");
+       document.getElementById("ant-1").innerHTML = "test1";
+       document.getElementById("spot-1").setAttribute('position', "0 0.1 0.1");
     }
     if(x == "models/5004015.glb"){
-       document.getElementById("ant").setAttribute('class', "hidden-annotation");
-       document.getElementById("spot").setAttribute('class', "hidden-hotspot");
+       document.getElementById("ant-1").setAttribute('class', "annotation");
+       document.getElementById("spot-1").setAttribute('class', "hotspot");
+       document.getElementById("ant-1").innerHTML = "test1";
+       document.getElementById("spot-1").setAttribute('position', "0 0.1 0");
+       document.getElementById("ant-2").setAttribute('class', "annotation");
+       document.getElementById("spot-2").setAttribute('class', "hotspot");
+       document.getElementById("ant-2").innerHTML = "test2";
+       document.getElementById("spot-2").setAttribute('position', "0 0.1 0.1");
     }
     
     modelViewer.updateHotspot({
