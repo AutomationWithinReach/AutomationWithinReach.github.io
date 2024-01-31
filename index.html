@@ -73,8 +73,8 @@
     <line class="dimensionLine"></line>
   </svg>
 
-   <button class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0">
-    <div class="annotation">This hotspot disappears completely</div>
+   <button id = "spot" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0">
+    <div id = "ant" class="annotation">This hotspot disappears completely</div>
   </button>
 
   <div id="controls" class="dim">
@@ -104,8 +104,23 @@
           <div class="update-bar"></div>
       </div>
   </body>
+<script>
 
-  <script>
+    <select name="test" id="mySelect" onchange="myFunction()">
+
+
+function myFunction() {
+    var x = document.getElementById("src").value;
+    if(x == "5002752"){
+       document.getElementById("spot").data-position = "0 0 0";
+       document.getElementById("ant") = "test1";
+    }
+   if(x == "5004015"){
+       document.getElementById("spot").data-position = "0 0.1 0";
+       document.getElementById("ant") = "test2";
+    }
+}
+
 const modelViewerParameters = document.querySelector("model-viewer#dimension-demo");
 
 modelViewerParameters.addEventListener("load", (ev) => {
@@ -184,16 +199,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     const x2 = size.x / 2;
     const y2 = size.y / 2;
     const z2 = size.z / 2;
-
-    if(src.target.value == "5002752") {
-      
-      modelViewer.updateHotspot({
-      name: 'hotspot',
-      position: `${0} ${0} ${0}`,
-      annotation: 'test'
-        
-    });
-
+    const name = modelViewer.getSrc
     }
 
     modelViewer.updateHotspot({
