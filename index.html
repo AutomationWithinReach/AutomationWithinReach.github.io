@@ -29,6 +29,11 @@
     background-color: transparent;
     border: 3px solid blue;
   }
+    
+  .hotspot[slot="slot-1"]:not([data-visible]) {
+    background-color: transparent;
+    border: 3px solid blue;
+  }
 
   .annotation{
     background-color: #888888;
@@ -46,6 +51,10 @@
   }
 
   .hidden-hotspot[slot="hotspot-foot"]:not([data-visible]) {
+    display: none;
+  }
+
+  .hidden-hotspot[slot="slot-1"]:not([data-visible]) {
     display: none;
   }
 
@@ -88,13 +97,13 @@
     <line class="dimensionLine"></line>
   </svg>
 
-   <button id="spot-1" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="1 0 0"><div id="ant-1" class="annotation">Default</div></button>
-   <button id="spot-2" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="1 0 0"><div id="ant-2" class="annotation">Default</div></button>
-   <button id="spot-3" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="1 0 0"><div id="ant-3" class="annotation">Default</div></button>
-   <button id="spot-4" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="1 0 0"><div id="ant-4" class="annotation">Default</div></button>
-   <button id="spot-5" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="1 0 0"><div id="ant-5" class="annotation">Default</div></button>
-   <button id="spot-6" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="1 0 0"><div id="ant-6" class="annotation">Default</div></button>
-   <button id="spot-7" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="1 0 0"><div id="ant-7" class="annotation">Default</div></button>
+   <button id="spot-1" class="hotspot" slot="slot-1" data-position="0 0 0" data-normal="0 0 0"><div id="ant-1" class="annotation">Default</div></button>
+   <button id="spot-2" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-2" class="annotation">Default</div></button>
+   <button id="spot-3" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-3" class="annotation">Default</div></button>
+   <button id="spot-4" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-4" class="annotation">Default</div></button>
+   <button id="spot-5" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-5" class="annotation">Default</div></button>
+   <button id="spot-6" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-6" class="annotation">Default</div></button>
+   <button id="spot-7" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-7" class="annotation">Default</div></button>
    <button id="spot-8" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-8" class="annotation">Default</div></button>
    <button id="spot-9" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-9" class="annotation">Default</div></button>
    <button id="spot-10" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0"><div id="ant-10" class="annotation">Default</div></button>
@@ -234,58 +243,22 @@ modelViewerParameters.addEventListener("load", (ev) => {
 
     var x = document.getElementById("src").value;
     if(x == "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb"){
+     
        document.getElementById("ant-1").setAttribute('class', "annotation");
        document.getElementById("spot-1").setAttribute('class', "hotspot");
-       document.getElementById("ant-1").innerHTML = "zero";
-       document.getElementById("spot-1").setAttribute('position', "0 0 0");
-       document.getElementById("ant-2").setAttribute('class', "annotation");
-       document.getElementById("spot-2").setAttribute('class', "hotspot");
-       document.getElementById("ant-2").innerHTML = "x";
-       document.getElementById("spot-2").setAttribute('position', "0.5 0 0");
-       document.getElementById("ant-3").setAttribute('class', "annotation");
-       document.getElementById("spot-3").setAttribute('class', "hotspot");
-       document.getElementById("ant-3").innerHTML = "y";
-       document.getElementById("spot-3").setAttribute('position', "0 0.5 0");
-       document.getElementById("ant-4").setAttribute('class', "annotation");
-       document.getElementById("spot-4").setAttribute('class', "hotspot");
-       document.getElementById("ant-4").innerHTML = "z";
-       document.getElementById("spot-4").setAttribute('position', "0 0 0.5");
+       document.getElementById("ant-1").innerHTML = "x";
+
+      modelViewer.updateHotspot({
+        name: 'slot-1',
+        position: `${center.x - x2} ${center.y - y2} ${center.z - z2}`
+      });
+       
     }
     if(x == "models/5004015.glb"){
-       document.getElementById("ant-1").setAttribute('class', "annotation");
-       document.getElementById("spot-1").setAttribute('class', "hotspot");
-       document.getElementById("ant-1").innerHTML = "zero";
-       document.getElementById("spot-1").setAttribute('position', "0m 0m 0m");
-       document.getElementById("ant-2").setAttribute('class', "annotation");
-       document.getElementById("spot-2").setAttribute('class', "hotspot");
-       document.getElementById("ant-2").innerHTML = "x";
-       document.getElementById("spot-2").setAttribute('position', "0.1m 0m 0m");
-       document.getElementById("ant-3").setAttribute('class', "annotation");
-       document.getElementById("spot-3").setAttribute('class', "hotspot");
-       document.getElementById("ant-3").innerHTML = "y";
-       document.getElementById("spot-3").setAttribute('position', "0m 0.1m 0m");
-       document.getElementById("ant-4").setAttribute('class', "annotation");
-       document.getElementById("spot-4").setAttribute('class', "hotspot");
-       document.getElementById("ant-4").innerHTML = "z";
-       document.getElementById("spot-4").setAttribute('position', "0m 0m 0.1m");
+       
     }
     if(x == "models/5007344.glb"){
-       document.getElementById("ant-1").setAttribute('class', "annotation");
-       document.getElementById("spot-1").setAttribute('class', "hotspot");
-       document.getElementById("ant-1").innerHTML = "zero";
-       document.getElementById("spot-1").setAttribute('data-position', "0 0 0");
-       document.getElementById("ant-2").setAttribute('class', "annotation");
-       document.getElementById("spot-2").setAttribute('class', "hotspot");
-       document.getElementById("ant-2").innerHTML = "x";
-       document.getElementById("spot-2").setAttribute('data-position', "0.1 0 0");
-       document.getElementById("ant-3").setAttribute('class', "annotation");
-       document.getElementById("spot-3").setAttribute('class', "hotspot");
-       document.getElementById("ant-3").innerHTML = "y";
-       document.getElementById("spot-3").setAttribute('data-position', "0 0.1 0");
-       document.getElementById("ant-4").setAttribute('class', "annotation");
-       document.getElementById("spot-4").setAttribute('class', "hotspot");
-       document.getElementById("ant-4").innerHTML = "z";
-       document.getElementById("spot-4").setAttribute('data-position', "0 0 0.1");
+      
     }
     
     modelViewer.updateHotspot({
