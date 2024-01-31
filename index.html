@@ -37,33 +37,20 @@
     border-radius: 10px;
     padding: 10px;
   }
-   .hidden-hotspot{
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: transparent;
-    box-sizing: border-box;
-    pointer-events: none;
+  .hidden-hotspot{
+    display: none;
   }
 
   .hidden-hotspot[slot="hotspot-hand"]{
-    --min-hotspot-opacity: 1;
-    background-color: transparent;
+    display: none;
   }
 
   .hidden-hotspot[slot="hotspot-foot"]:not([data-visible]) {
-    background-color: transparent;
-    border: 3px transparent;
+    display: none;
   }
 
   .hidden-annotation{
-    background-color: transparent;
-    position: absolute;
-    transform: translate(10px, 10px);
-    border-radius: 10px;
-    padding: 10px;
+    display: none;
   }
   /* This keeps child nodes hidden while the element loads */
   :not(:defined) > * {
@@ -206,6 +193,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
     drawLine(dimLines[4], modelViewer.queryHotspot('hotspot-dot-X-Y-Z'), modelViewer.queryHotspot('hotspot-dot-X-Y+Z'), modelViewer.queryHotspot('hotspot-dim-X-Y'));
   };
 
+  function clearAnnotations() {
+   
+  }
+
   modelViewer.addEventListener('load', () => {
     const center = modelViewer.getBoundingBoxCenter();
     const size = modelViewer.getDimensions();
@@ -221,8 +212,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
        document.getElementById("spot").setAttribute('position', "0 0.1 0.1");
     }
     if(x == "models/5004015.glb"){
-       document.getElementById("ant").setAttribute('class', "annotation");
-       document.getElementById("spot").setAttribute('class', "hotspot");
+       document.getElementById("ant").setAttribute('class', "hidden-annotation");
+       document.getElementById("spot").setAttribute('class', "hidden-hotspot");
     }
     
     modelViewer.updateHotspot({
