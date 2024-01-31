@@ -73,7 +73,7 @@
           <img class="awr" src="awr-logo.png">
       </div>
 
-    <div class="txt">Scan The QR Code To View This Model In Your Space</div>
+    <div class="txt">   Scan The QR Code To View This Model In Your Space</div>
   
     
   <!-- <model-viewer> HTML element -->
@@ -247,6 +247,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
        document.getElementById("ant-1").setAttribute('class', "annotation");
        document.getElementById("spot-1").setAttribute('class', "hotspot");
        document.getElementById("ant-1").innerHTML = "x";
+      
 
       modelViewer.updateHotspot({
         name: 'slot-1',
@@ -255,7 +256,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
        
     }
     if(x == "models/5004015.glb"){
-       
+       document.getElementById("ant-1").setAttribute('class', "annotation");
+       document.getElementById("spot-1").setAttribute('class', "hotspot");
+       document.getElementById("ant-1").innerHTML = "x";
+       document.getElementById("spot-1").setAttribute('data-position', "1 1 1");
     }
     if(x == "models/5007344.glb"){
       
