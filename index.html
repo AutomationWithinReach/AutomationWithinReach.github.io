@@ -43,23 +43,23 @@
     height: 20px;
     border-radius: 10px;
     border: none;
-    background-color: blue;
+    background-color: transparent;
     box-sizing: border-box;
     pointer-events: none;
   }
 
   .hidden-hotspot[slot="hotspot-hand"]{
-    --min-hotspot-opacity: 0;
-    background-color: red;
+    --min-hotspot-opacity: 1;
+    background-color: transparent;
   }
 
   .hidden-hotspot[slot="hotspot-foot"]:not([data-visible]) {
     background-color: transparent;
-    border: 3px solid blue;
+    border: 3px transparent;
   }
 
   .hidden-annotation{
-    background-color: #888888;
+    background-color: transparent;
     position: absolute;
     transform: translate(10px, 10px);
     border-radius: 10px;
