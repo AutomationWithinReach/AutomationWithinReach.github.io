@@ -73,8 +73,8 @@
     <line class="dimensionLine"></line>
   </svg>
 
-   <button class="hotspot" slot="hotspot-hand" data-position="0.1 0 0" data-normal="0 0 0">
-    <div class="annotation">This hotspot disappears completely</div>
+   <button id="spot" class="hotspot" slot="hotspot-hand" data-position="0 0 0" data-normal="0 0 0">
+    <div id="ant" class="annotation">This hotspot disappears completely</div>
   </button>
 
   <div id="controls" class="dim">
@@ -186,15 +186,15 @@ modelViewerParameters.addEventListener("load", (ev) => {
     const z2 = size.z / 2;
 
     var x = document.getElementById("src").value;
-    if(x == "5002752"){
+    if(x == "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb"){
        document.getElementById("ant").innerHTML = "test1";
-       document.getElementById("src")setAttribute('position', "0 0.1 0.1");
+       document.getElementById("spot").setAttribute('position', "0 0.1 0.1");
     }
-    if(x == "5004015"){
+    if(x == "models/5004015.glb"){
        document.getElementById("ant").innerHTML = "test2";
-       document.getElementById("src")setAttribute('position', "0 0.1 0");
+       document.getElementById("spot").setAttribute('position', "0 0.1 0");
     }
-
+    
     modelViewer.updateHotspot({
       name: 'hotspot-dot+X-Y+Z',
       position: `${center.x + x2} ${center.y - y2} ${center.z + z2}`
