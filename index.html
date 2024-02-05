@@ -150,10 +150,9 @@ modelViewerParameters.addEventListener("load", (ev) => {
     modelViewer.src = event.target.value;
   });
   
-   modelViewer.querySelector('.unit').addEventListener('change', (event) => {
-    modelViewer.dismissPoster();
-    console.log("x");
-  });
+   modelViewer.querySelector('.unit').addEventListener('change',
+    () => document.querySelector('#dimension-demo').dismissPoster());
+
 
   const checkbox = modelViewer.querySelector('#show-dimensions');
 
