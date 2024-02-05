@@ -146,6 +146,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
 <script type="module">
   const modelViewer = document.querySelector('#dimension-demo');
 
+  var ready = false;
+
   modelViewer.querySelector('#src').addEventListener('input', (event) => {
     modelViewer.src = event.target.value;
   });
@@ -153,16 +155,18 @@ modelViewerParameters.addEventListener("load", (ev) => {
    modelViewer.querySelector('.unit').addEventListener('input', (event) => {
     var s = document.getElementById("src").value;
     console.log(s)
+    ready = false;
     modelViewer.setAttribute('src', "awr-logo.glb")
-    while(!modelViewer.loaded){};
-    while(!modelViewer.modelIsVisible){};
+    while(ready == false){
+      console.log("Loading");
+    };
     modelViewer.setAttribute('src', s);
   });
   
   const checkbox = modelViewer.querySelector('#show-dimensions');
 
   const dimElements = [...modelViewer.querySelectorAll('button'), modelViewer.querySelector('#dimLines')];
-
+  
   function setVisibility(visible) {
     dimElements.forEach((element) => {
       if (visible) {
@@ -322,6 +326,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     renderSVG();
 
     modelViewer.addEventListener('camera-change', renderSVG);
+    ready = true;
   });
 </script>
 <style>
