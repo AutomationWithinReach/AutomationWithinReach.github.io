@@ -149,16 +149,18 @@ modelViewerParameters.addEventListener("load", (ev) => {
   modelViewer.querySelector('#src').addEventListener('input', (event) => {
     modelViewer.src = event.target.value;
   });
+
+  window.switchSrc = (name) => {
+    modelViewer.src = name;
+  };
   
    modelViewer.querySelector('.unit').addEventListener('input', (event) => {
     var s = document.getElementById("src").value;
-    modelViewer.src = event.target.value;
+    switchSrc("models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb");
     console.log(s)
-    modelViewer.src =  s;
-    modelViewer.dispatchEvent('load');
+    switchSrc(s);
   });
   
-
   const checkbox = modelViewer.querySelector('#show-dimensions');
 
   const dimElements = [...modelViewer.querySelectorAll('button'), modelViewer.querySelector('#dimLines')];
