@@ -21,7 +21,7 @@
   }
 
   .hotspot[slot="hotspot-1"]{
-    --min-hotspot-opacity: 10;
+    --min-hotspot-opacity: 0.1;
     background-color: green;
   }
 
@@ -151,7 +151,9 @@ modelViewerParameters.addEventListener("load", (ev) => {
   });
   
    modelViewer.querySelector('#unit').addEventListener('input', (event) => {
-    modelViewer.src =  modelViewer.src;
+    var s = document.getElementById("src").value;
+    modelViewer.src = "";
+    modelViewer.src = s;
   });
 
   const checkbox = modelViewer.querySelector('#show-dimensions');
