@@ -169,12 +169,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
   checkbox.addEventListener('change', () => {
     setVisibility(checkbox.checked);
   });
-
-  sel.addEventListener('change', () => {
-    setTimeout(() => {
-      window.location.reload(true);
-    }, 200);
-  });
   
   modelViewer.addEventListener('ar-status', (event) => {
     setVisibility(checkbox.checked && event.detail.status !== 'session-started');
