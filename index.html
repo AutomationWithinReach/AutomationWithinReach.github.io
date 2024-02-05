@@ -163,9 +163,15 @@ modelViewerParameters.addEventListener("load", (ev) => {
       }
     });
   }
+  
+  const reload = document.querySelector("#reload");
 
   checkbox.addEventListener('change', () => {
     setVisibility(checkbox.checked);
+    
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 200);
   });
 
   modelViewer.addEventListener('ar-status', (event) => {
@@ -244,15 +250,15 @@ modelViewerParameters.addEventListener("load", (ev) => {
     if(u == "imperial"){
 
        modelViewer.querySelector('button[slot="hotspot-dim+X-Y"]').textContent =
-        `${(size.z * 100 * 0.393701).toFixed(0)} in`;
+        `${(size.z * 100 * 0.393701).toFixed(2)} in`;
       modelViewer.querySelector('button[slot="hotspot-dim+X-Z"]').textContent =
-        `${(size.y * 100 * 0.393701).toFixed(0)} in`;
+        `${(size.y * 100 * 0.393701).toFixed(2)} in`;
        modelViewer.querySelector('button[slot="hotspot-dim+Y-Z"]').textContent =
-        `${(size.x * 100 * 0.393701).toFixed(0)} in`;
+        `${(size.x * 100 * 0.393701).toFixed(2)} in`;
        modelViewer.querySelector('button[slot="hotspot-dim-X-Z"]').textContent =
-        `${(size.y * 100 * 0.393701).toFixed(0)} in`;
+        `${(size.y * 100 * 0.393701).toFixed(2)} in`;
        modelViewer.querySelector('button[slot="hotspot-dim-X-Y"]').textContent =
-        `${(size.z * 100 * 0.393701).toFixed(0)} in`;
+        `${(size.z * 100 * 0.393701).toFixed(2)} in`;
     }
   
     modelViewer.updateHotspot({
