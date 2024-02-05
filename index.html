@@ -151,8 +151,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
   });
   
    modelViewer.querySelector('.unit').addEventListener('change', (event) => {
-    modelViewer.src =  modelViewer.src;
+    var s = document.getElementById("src").value;
+    modelViewer.src = "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb";
     console.log("x")
+    modelViewer.src =  s;
   });
   
 
@@ -347,7 +349,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
       align-items: flex-start;
   }
   .txt{
-      position: dynamic;
+      position: relative;
       font-size: larger;
       text-align:left;
       color:green;
