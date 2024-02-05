@@ -152,9 +152,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
   
    modelViewer.querySelector('.unit').addEventListener('input', (event) => {
     var s = document.getElementById("src").value;
-    modelViewer.src = event.target.value;;
+    modelViewer.src = event.target.value;
     console.log(s)
     modelViewer.src =  s;
+    this.dispatchEvent('load');
   });
   
 
