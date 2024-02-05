@@ -59,7 +59,7 @@
   
     
   <!-- <model-viewer> HTML element -->
-<model-viewer id="dimension-demo" poster="awr-logo.png" src="models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" shadow-intensity="1">
+<model-viewer id="dimension-demo" poster="awr-logo.png" loading="auto" reveal="auto" src="models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" shadow-intensity="1">
   <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
   <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
   <button slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
@@ -153,8 +153,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
    modelViewer.querySelector('.unit').addEventListener('input', (event) => {
     var s = document.getElementById("src").value;
     console.log(s)
-    modelViewer.setAttribute('src', "models/5004015.glb")
-    modelViewer.setAttribute('src', s)
+    modelViewer.setAttribute('src', "")
+    setTimeout(function(){
+      modelViewer.setAttribute('src', s);
+    }, 2000);
   });
   
   const checkbox = modelViewer.querySelector('#show-dimensions');
