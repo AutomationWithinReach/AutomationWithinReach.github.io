@@ -155,7 +155,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     modelViewer.src = event.target.value;
     console.log(s)
     modelViewer.src =  s;
-    this.dispatchEvent('load');
+    modelViewer.dispatchEvent('load');
   });
   
 
