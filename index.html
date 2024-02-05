@@ -171,9 +171,9 @@ modelViewerParameters.addEventListener("load", (ev) => {
   });
 
   sel.addEventListener('change', () => {
-    var s = document.getElementById("src").value;
-    document.getElementById("dimension-demo").setAttribute('src', "");
-    document.getElementById("dimension-demo").setAttribute('src', s);
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 200);
   });
   
   modelViewer.addEventListener('ar-status', (event) => {
