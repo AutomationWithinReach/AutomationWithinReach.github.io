@@ -153,10 +153,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
    modelViewer.querySelector('.unit').addEventListener('input', (event) => {
     var s = document.getElementById("src").value;
     console.log(s)
-    modelViewer.setAttribute('src', "")
-    while(!modelViewer.loaded){};
-    while(!modelViewer.modelIsVisible){};
-    modelViewer.setAttribute('src', s);
+    modelViewer.setAttribute('src', "awr-logo.glb")
+    
   });
   
   const checkbox = modelViewer.querySelector('#show-dimensions');
