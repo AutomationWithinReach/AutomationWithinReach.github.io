@@ -228,7 +228,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     }
 
     var u = document.getElementById("unit").value;
-    if(x == "metric"){ 
+    if(u == "metric"){ 
       
       modelViewer.querySelector('button[slot="hotspot-dim+X-Y"]').textContent =
         `${(size.z * 100).toFixed(0)} cm`;
@@ -241,7 +241,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
        modelViewer.querySelector('button[slot="hotspot-dim-X-Y"]').textContent =
         `${(size.z * 100).toFixed(0)} cm`;
     }
-    if(x == "imperial"){
+    if(u == "imperial"){
 
        modelViewer.querySelector('button[slot="hotspot-dim+X-Y"]').textContent =
         `${(size.z * 100 * 0.393701).toFixed(0)} in`;
