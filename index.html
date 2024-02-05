@@ -154,7 +154,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     var s = document.getElementById("src").value;
     console.log(s)
     modelViewer.setAttribute('src', "")
-    while( document.getElementById("src").value != ""){};
+    while(!ModelViewerStatic.modelIsVisible){};
     modelViewer.setAttribute('src', s);
   });
   
