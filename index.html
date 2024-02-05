@@ -150,9 +150,11 @@ modelViewerParameters.addEventListener("load", (ev) => {
     modelViewer.src = event.target.value;
   });
   
-   modelViewer.querySelector('.unit').addEventListener('change',
-    () => document.querySelector('#dimension-demo').dismissPoster());
-
+   modelViewer.querySelector('.unit').addEventListener('change', (event) => {
+    modelViewer.src =  modelViewer.src;
+    console.log("x")
+  });
+  
 
   const checkbox = modelViewer.querySelector('#show-dimensions');
 
@@ -345,9 +347,9 @@ modelViewerParameters.addEventListener("load", (ev) => {
       align-items: flex-start;
   }
   .txt{
+      position: dynamic;
       font-size: larger;
       text-align:left;
-      vertical-align:center;
       color:green;
       left: 16px;
   }
