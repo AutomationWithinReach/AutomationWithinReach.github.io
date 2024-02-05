@@ -154,9 +154,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
     var s = document.getElementById("src").value;
     console.log(s)
     modelViewer.setAttribute('src', "")
-    setTimeout(function(){
-      modelViewer.setAttribute('src', s);
-    }, 2000);
+    while( document.getElementById("src").value != ""){};
+    modelViewer.setAttribute('src', s);
   });
   
   const checkbox = modelViewer.querySelector('#show-dimensions');
