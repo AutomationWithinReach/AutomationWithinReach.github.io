@@ -21,7 +21,7 @@
   }
 
   .hotspot[slot="hotspot-1"]{
-    --min-hotspot-opacity: 0;
+    --min-hotspot-opacity: 10;
     background-color: green;
   }
 
@@ -149,6 +149,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
   modelViewer.querySelector('#src').addEventListener('input', (event) => {
     modelViewer.src = event.target.value;
   });
+  
+   modelViewer.querySelector('#unit').addEventListener('input', (event) => {
+    modelViewer.src =  modelViewer.src;
+  });
 
   const checkbox = modelViewer.querySelector('#show-dimensions');
 
@@ -164,8 +168,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
     });
   }
   
-  const reload = document.querySelector("#reload");
-
   checkbox.addEventListener('change', () => {
     setVisibility(checkbox.checked);
   });
