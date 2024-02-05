@@ -108,6 +108,12 @@
 
     <label for="show-dimensions">Show Annotations:</label>
     <input id="show-dimensions" type="checkbox" checked="true">
+
+    <label for="unit">Units:</label>
+    <select id="unit">
+      <option value="metric">Metric</option>
+      <option value="imperial">Imperial</option>
+    </select><br>
   </div>
  
   
@@ -220,7 +226,35 @@ modelViewerParameters.addEventListener("load", (ev) => {
     if(x == "models/5007344.glb"){
       
     }
-    
+
+    var u = document.getElementById("unit").value;
+    if(x == "metric"){ 
+      
+      modelViewer.querySelector('button[slot="hotspot-dim+X-Y"]').textContent =
+        `${(size.z * 100).toFixed(0)} cm`;
+      modelViewer.querySelector('button[slot="hotspot-dim+X-Z"]').textContent =
+        `${(size.y * 100).toFixed(0)} cm`;
+       modelViewer.querySelector('button[slot="hotspot-dim+Y-Z"]').textContent =
+        `${(size.x * 100).toFixed(0)} cm`;
+       modelViewer.querySelector('button[slot="hotspot-dim-X-Z"]').textContent =
+        `${(size.y * 100).toFixed(0)} cm`;
+       modelViewer.querySelector('button[slot="hotspot-dim-X-Y"]').textContent =
+        `${(size.z * 100).toFixed(0)} cm`;
+    }
+    if(x == "imperial"){
+
+       modelViewer.querySelector('button[slot="hotspot-dim+X-Y"]').textContent =
+        `${(size.z * 100 * 0.393701).toFixed(0)} in`;
+      modelViewer.querySelector('button[slot="hotspot-dim+X-Z"]').textContent =
+        `${(size.y * 100 * 0.393701).toFixed(0)} in`;
+       modelViewer.querySelector('button[slot="hotspot-dim+Y-Z"]').textContent =
+        `${(size.x * 100 * 0.393701).toFixed(0)} in`;
+       modelViewer.querySelector('button[slot="hotspot-dim-X-Z"]').textContent =
+        `${(size.y * 100 * 0.393701).toFixed(0)} in`;
+       modelViewer.querySelector('button[slot="hotspot-dim-X-Y"]').textContent =
+        `${(size.z * 100 * 0.393701).toFixed(0)} in`;
+    }
+  
     modelViewer.updateHotspot({
       name: 'hotspot-dot+X-Y+Z',
       position: `${center.x + x2} ${center.y - y2} ${center.z + z2}`
@@ -230,9 +264,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
       name: 'hotspot-dim+X-Y',
       position: `${center.x + x2 * 1.2} ${center.y - y2 * 1.1} ${center.z}`
     });
-    modelViewer.querySelector('button[slot="hotspot-dim+X-Y"]').textContent =
-        `${(size.z * 100).toFixed(0)} cm`;
-
+   
     modelViewer.updateHotspot({
       name: 'hotspot-dot+X-Y-Z',
       position: `${center.x + x2} ${center.y - y2} ${center.z - z2}`
@@ -242,8 +274,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
       name: 'hotspot-dim+X-Z',
       position: `${center.x + x2 * 1.2} ${center.y} ${center.z - z2 * 1.2}`
     });
-    modelViewer.querySelector('button[slot="hotspot-dim+X-Z"]').textContent =
-        `${(size.y * 100).toFixed(0)} cm`;
 
     modelViewer.updateHotspot({
       name: 'hotspot-dot+X+Y-Z',
@@ -254,8 +284,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
       name: 'hotspot-dim+Y-Z',
       position: `${center.x} ${center.y + y2 * 1.1} ${center.z - z2 * 1.1}`
     });
-    modelViewer.querySelector('button[slot="hotspot-dim+Y-Z"]').textContent =
-        `${(size.x * 100).toFixed(0)} cm`;
 
     modelViewer.updateHotspot({
       name: 'hotspot-dot-X+Y-Z',
@@ -266,8 +294,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
       name: 'hotspot-dim-X-Z',
       position: `${center.x - x2 * 1.2} ${center.y} ${center.z - z2 * 1.2}`
     });
-    modelViewer.querySelector('button[slot="hotspot-dim-X-Z"]').textContent =
-        `${(size.y * 100).toFixed(0)} cm`;
 
     modelViewer.updateHotspot({
       name: 'hotspot-dot-X-Y-Z',
@@ -278,8 +304,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
       name: 'hotspot-dim-X-Y',
       position: `${center.x - x2 * 1.2} ${center.y - y2 * 1.1} ${center.z}`
     });
-    modelViewer.querySelector('button[slot="hotspot-dim-X-Y"]').textContent =
-        `${(size.z * 100).toFixed(0)} cm`;
 
     modelViewer.updateHotspot({
       name: 'hotspot-dot-X-Y+Z',
