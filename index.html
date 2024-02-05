@@ -110,7 +110,7 @@
     <input id="show-dimensions" type="checkbox" checked="true">
 
     <label for="unit">Units:</label>
-    <select id="unit">
+    <select id="unit" type="sel">
       <option value="metric">Metric</option>
       <option value="imperial">Imperial</option>
     </select><br>
@@ -170,7 +170,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     setVisibility(checkbox.checked);
   });
 
-  unit.addEventListener('change', () => {
+  sel.addEventListener('change', () => {
     var s = document.getElementById("src").value;
     document.getElementById("dimension-demo").setAttribute('src', "");
     document.getElementById("dimension-demo").setAttribute('src', s);
