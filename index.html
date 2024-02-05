@@ -79,8 +79,29 @@
     <line class="dimensionLine"></line>
   </svg>
 
-   <button id="spot-1" class="hotspot" slot="hotspot-1" data-position="0.05786554385311728m 0.007757613450444567m 0.023007202807698676m" data-normal="0m -0.9135455240053287m 0.40673649402264017m" data-visibility-attribute="visible">
+   <button id="spot-1" class="Hotspot" slot="hotspot-1" data-position="0.05786554385311728m 0.007757613450444567m 0.023007202807698676m" data-normal="0m -0.9135455240053287m 0.40673649402264017m" data-visibility-attribute="visible">
       <div id="ant-1" class="annotation">Pin</div></button>
+
+  <button id="spot-2" class="hotspot" slot="hotspot-1" data-position="-0.09734240527673425m 0.0262101703867281m -0.15093502150734436m" data-normal="0.07682772510565983m 0.7320471744388427m 0.676907996001817m" data-visibility-attribute="visible">
+    <div id="ant-2" class="annotation">Cable</div></button>
+  <button id="spot-3" class="hotspot" slot="hotspot-2" data-position="0.101627573502076m 0.03607742650354882m 0.0524533974302679m" data-normal="0.013688486500912792m 0.7323856645092087m 0.6807524247174733m" data-visibility-attribute="visible">
+    <div id="ant-3" class="annotation">Cable</div></button>
+  <button id="spot-4" class="hotspot" slot="hotspot-3" data-position="-0.10946019368523606m 0.018621422624973582m 0.05238528726072122m" data-normal="-0.13879278587959348m -0.36119009056098345m 0.9221053524778662m" data-visibility-attribute="visible">
+    <div id="ant-4" class="annotation">Cable</div></button>
+  <button id="spot-5" class="hotspot" slot="hotspot-4" data-position="0.10929127842218712m 0.008000000325801828m -0.1967828224041498m" data-normal="0m 0.9999999999999996m -3.4228542950295595e-8m" data-visibility-attribute="visible">
+    <div id="ant-5" class="annotation">Connector</div></button>
+  <button id="spot-6" class="hotspot" slot="hotspot-5" data-position="0.3830203582337416m 0.1252708937724909m -0.1402656203263934m" data-normal="-3.4228542950295595e-8m 0m 0.9999999999999996m" data-visibility-attribute="visible">
+    <div id="ant-6" class="annotation">Reflector</div></button>
+  <button id="spot-7" class="hotspot" slot="hotspot-6" data-position="0.39056465018319003m 0.13104690284091602m 0.012134375296085492m" data-normal="-3.4228542950295595e-8m 0m 0.9999999999999996m" data-visibility-attribute="visible">
+    <div id="ant-7" class="annotation">Reflector</div></button>
+  <button id="spot-8" class="hotspot" slot="hotspot-7" data-position="-0.37529049612855975m 0.016349999286961958m -0.14461649789758635m" data-normal="3.4228542950295595e-8m 0.9999999999999996m 0m" data-visibility-attribute="visible">
+    <div id="ant-8" class="annotation">Laser</div></button>
+  <button id="spot-9" class="hotspot" slot="hotspot-8" data-position="-0.3791986552651861m 0.016349999420732328m 0.01101612081876674m" data-normal="3.4228542950295595e-8m 0.9999999999999996m 0m" data-visibility-attribute="visible">
+    <div id="ant-9" class="annotation">Laser</div></button>
+  <button id="spot-10" class="hotspot" slot="hotspot-9" data-position="-0.7679901709730681m 0.05488477826430671m 0.004960939288139343m" data-normal="0m 0m 1m" data-visibility-attribute="visible">
+    <div id="ant-10" class="annotation">Expansion Foam</div></button>
+  <button id="spot-11" class="hotspot" slot="hotspot-10" data-position="-0.8174355049505166m 0.03175000101327896m 0.20116408143992892m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+    <div id="ant-11" class="annotation">Box</div></button>
 
   <div id="controls" class="dim">
     <label for="src">Product:</label>
@@ -216,8 +237,28 @@ modelViewerParameters.addEventListener("load", (ev) => {
   };
 
   function clearAnnotations() {
-      document.getElementById("spot-1").setAttribute('class', "hidden-hotspot");
+    document.getElementById("spot-1").setAttribute('class', "hidden-hotspot");
       document.getElementById("ant-1").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-2").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-2").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-3").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-3").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-4").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-4").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-5").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-5").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-6").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-6").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-7").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-7").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-8").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-8").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-9").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-9").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-10").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-10").setAttribute('class', "hidden-annotation");
+    document.getElementById("spot-11").setAttribute('class', "hidden-hotspot");
+      document.getElementById("ant-11").setAttribute('class', "hidden-annotation");
   }
 
   modelViewer.addEventListener('load', () => {
@@ -238,8 +279,12 @@ modelViewerParameters.addEventListener("load", (ev) => {
        document.getElementById("ant-1").setAttribute('class', "annotation");
 
     }
-    if(x == "models/5007344.glb"){
-      
+    if(x == "models/AWR-2SENSOR-DOOR.glb"){
+
+      for (let i = 1; i =< 11; i++) {
+        document.getElementById("spot-" + i).setAttribute('class', "hotspot");
+        document.getElementById("ant-" + i).setAttribute('class', "annotation");
+      }
     }
 
     var u = document.getElementById("unit").value;
