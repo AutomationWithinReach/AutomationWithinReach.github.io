@@ -102,7 +102,7 @@
 
   <div id="controls" class="dim">
     <label for="src">Product:</label>
-    <select id="src">
+    <select id="src" class="src_sel">
       <option value="models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb">5002752_MultiGrip Top Jaw, OD 1.5" tall</option>
       <option value="models/5004015.glb">5004015_MultiGrip FIXED Jaw, OD 1.5" tall</option>
       <option value="models/5004027_REV-A-MultiGripBaseJawsOD.glb">5004027_MultiGrip Base Jaw</option>
@@ -177,7 +177,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     
    setTimeout(() => {
       modelViewer.setAttribute('src', s);
-   }, "1000");
+   }, "100");
      
    modelViewer.setAttribute('src', "awr-logo.glb")
     
@@ -382,6 +382,10 @@ modelViewerParameters.addEventListener("load", (ev) => {
     transform: unset;
     pointer-events: auto;
     z-index: 100;
+  }
+
+  .ser_sel{
+      max-width: 50%;
   }
 
   .dot{
