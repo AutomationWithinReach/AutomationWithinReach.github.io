@@ -177,7 +177,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     
    setTimeout(() => {
       modelViewer.setAttribute('src', s);
-   }, "10");
+   }, "1");
      
    modelViewer.setAttribute('src', "awr-logo.glb")
     
@@ -384,8 +384,12 @@ modelViewerParameters.addEventListener("load", (ev) => {
     z-index: 100;
   }
 
-  .ser_sel{
-      max-width: 50%;
+  .src_sel {
+    min-width: 0;
+  }
+
+  select {
+    max-width: 100%;
   }
 
   .dot{
