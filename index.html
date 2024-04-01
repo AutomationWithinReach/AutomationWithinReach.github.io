@@ -184,7 +184,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
   const modelViewer = document.querySelector('#dimension-demo');
 
   var ready = false;
-  <!-- Event listener for updating the model path -->
+  // Event listener for updating the model path
   modelViewer.querySelector('#src').addEventListener('input', (event) => {
     modelViewer.src = event.target.value;
   });
@@ -280,7 +280,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
       document.getElementById("ant-11").setAttribute('class', "hidden-annotation");
   }
   //****************************************************************************************************************************************************************************************** 
-  <!-- This event listener updates all of the model dimensions and hotspots during a model change it is triggered in the API by the model src changing -->
+  // This event listener updates all of the model dimensions and hotspots during a model change it is triggered in the API by the model src changing 
   modelViewer.addEventListener('load', () => {
     const center = modelViewer.getBoundingBoxCenter();
     const size = modelViewer.getDimensions();
