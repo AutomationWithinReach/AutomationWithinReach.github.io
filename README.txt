@@ -1,6 +1,6 @@
 Feel free to contact j.roach1713@gmail.com with questions
 
-Link to Access the Site: https://automationwithinreach.github.io/
+Link to Access the webpage: https://automationwithinreach.github.io/
 
 Other Helpful Links:
 
