@@ -166,7 +166,7 @@
 
 const modelViewerParameters = document.querySelector("model-viewer#dimension-demo");
 
-<!-- This event listener assigns a default color to models without one ********************************-->
+// This event listener assigns a default color to models without one 
 modelViewerParameters.addEventListener("load", (ev) => {
     
   let material = modelViewerParameters.model.materials[0];
@@ -177,7 +177,6 @@ modelViewerParameters.addEventListener("load", (ev) => {
   material.pbrMetallicRoughness.setRoughnessFactor(0.2);
 
 });
-<!-- ************************************************************************************************** -->
 </script>
 
 <!-- JavaScript for updating models and hotspots -->
@@ -190,12 +189,12 @@ modelViewerParameters.addEventListener("load", (ev) => {
     modelViewer.src = event.target.value;
   });
 
-  <!-- Event listener for updating the units -->
+  // Event listener for updating the units 
   modelViewer.querySelector('.unit').addEventListener('input', (event) => {
     var s = document.getElementById("src").value;
     console.log(s)
     ready = false;
-  <!-- This setTimeout function is used to trigger the load event listener which in turn updates the dimensions based on the set units -->
+  // This setTimeout function is used to trigger the load event listener which in turn updates the dimensions based on the set units
    setTimeout(() => {
       modelViewer.setAttribute('src', s);
    }, "0.1");
@@ -204,7 +203,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     
   });
 
-  <!-- This portion of script contols responds to the Show Annotations Checkbox -->
+  // This portion of script contols responds to the Show Annotations Checkbox
   const checkbox = modelViewer.querySelector('#show-dimensions');
 
   const dimElements = [...modelViewer.querySelectorAll('button'), modelViewer.querySelector('#dimLines')];
@@ -228,7 +227,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
   });
 
   // update svg
-  <!-- This function draws lines in between the dimension hotspots -->
+  // This function draws lines in between the dimension hotspots
   function drawLine(svgLine, dotHotspot1, dotHotspot2, dimensionHotspot) {
     if (dotHotspot1 && dotHotspot2) {
       svgLine.setAttribute('x1', dotHotspot1.canvasPosition.x);
@@ -255,7 +254,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     drawLine(dimLines[3], modelViewer.queryHotspot('hotspot-dot-X+Y-Z'), modelViewer.queryHotspot('hotspot-dot-X-Y-Z'), modelViewer.queryHotspot('hotspot-dim-X-Z'));
     drawLine(dimLines[4], modelViewer.queryHotspot('hotspot-dot-X-Y-Z'), modelViewer.queryHotspot('hotspot-dot-X-Y+Z'), modelViewer.queryHotspot('hotspot-dim-X-Y'));
   };
-  <!-- clearAnnotations hides all hotspots and annotations during a model update ****************************************************************************************************************-->
+  //clearAnnotations hides all hotspots and annotations during a model update ****************************************************************************************************************
   function clearAnnotations() {
     document.getElementById("spot-1").setAttribute('class', "hidden-hotspot");
       document.getElementById("ant-1").setAttribute('class', "hidden-annotation");
@@ -280,7 +279,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     document.getElementById("spot-11").setAttribute('class', "hidden-hotspot");
       document.getElementById("ant-11").setAttribute('class', "hidden-annotation");
   }
-  <!-- ****************************************************************************************************************************************************************************************** -->
+  //****************************************************************************************************************************************************************************************** 
   <!-- This event listener updates all of the model dimensions and hotspots during a model change it is triggered in the API by the model src changing -->
   modelViewer.addEventListener('load', () => {
     const center = modelViewer.getBoundingBoxCenter();
@@ -292,7 +291,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     clearAnnotations();
 
     var modelPath = document.getElementById("src").value;
-    <!-- These if statements set hotspots to a visible state when there corresponding model is loaded  ****************************************************************************************-->
+    //These if statements set hotspots to a visible state when there corresponding model is loaded  ************************************************************
     if(modelPath == "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb"){ 
 
     }
@@ -309,9 +308,9 @@ modelViewerParameters.addEventListener("load", (ev) => {
       }
     }
 
-    <!-- *************************************************************************************************************************************************************************************-->
+    //***********************************************************************************************************************************************************
 
-    <!-- These if statements do the appropriate conversion to set units to either metric or imperial-->
+    //These if statements do the appropriate conversion to set units to either metric or imperial
     var u = document.getElementById("unit").value;
     if(u == "metric"){ 
       
