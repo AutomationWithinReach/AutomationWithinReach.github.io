@@ -32,18 +32,19 @@ How to change models:
 	- To add or remove a model from the site simply add or delete a line with this format:
 	  <option value="path to model">Name of Model</option>
 
-	- Note: If your are changing the first model in the list then the path on line 66 will also need to be changed. <model-viewer id="dimension-demo" poster="awr-logo.png" loading="auto" reveal="auto" src="CHANGE TO NEW PATH"
+	- Note: If your are changing the first model in the list then the path on line 66 will also need to be changed. 
+	<model-viewer id="dimension-demo" poster="awr-logo.png" loading="auto" reveal="auto" src="CHANGE TO NEW PATH"
 	
 How to change hotspots:
 
 	- Open this link and upload your model: https://modelviewer.dev/editor/
 
-	- Click the pen/edit button in the ribbon and then at the bottom of the ribbon click Hotspots and add the hotspots you want on your model.
+	- In the ribbon click the pen. then at the bottom of the ribbon click hotspots and add the hotspots you want on your model.
 
 	- Find the <model-viewer> snippet which is the code at the top of the ribbon.
 
 	- After adding hotspots the snippet will include button classes similar to this: 
-		<button class="Hotspot" slot="hotspot-1" data-position="0m 1m 0m" data-normal="-0m -0m 0m" data-visibility-attribute="visible">
+		<button class="Hotspot" slot="hotspot-1" data-position="0m 1m 0m" data-normal="-0m -0m 0m">
 		<div class="HotspotAnnotation">Test</div>
 		</button>
 
