@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+
+  <!-- head block declares model-viewer parameters -->
+  
   <head>
     <title>&lt;model-viewer&gt; AWR</title>
     <meta charset="utf-8">
@@ -8,6 +11,8 @@
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
   </head>
 
+  <!-- style block controls the css associated with each hotspot and hotspot annotation -->
+  
   <style>
   .hotspot{
     display: block;
@@ -45,18 +50,22 @@
     display: none;
   }
 </style>
+  
   <body>
 
-     <div id="qr-code" class="con">
-         <img class="qr" src="qr-code.png">
-          <img class="awr" src="awr-logo.png">
-      </div>
-
+    <!-- This section initaializes the qr code, awr logo and text at the top of the webpage. The css style blocks for each of these elements is near the bottom of index.html -->
+      
+    <div id="qr-code" class="con">
+       <img class="qr" src="qr-code.png">
+        <img class="awr" src="awr-logo.png">
+    </div>
     <div class="txt">   Scan The QR Code To View This Model In Your Space</div>
-  
     
   <!-- <model-viewer> HTML element -->
+  <!-- This is the initalization statment for the model-viewer API the src in this line should match the first dropdown option in conrols-->
 <model-viewer id="dimension-demo" poster="awr-logo.png" loading="auto" reveal="auto" src="models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" shadow-intensity="1">
+
+  <!-- These buttons are the hotspots used to dimension each model they are updated in javascript further down in index.html -->
   <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
   <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
   <button slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
@@ -76,6 +85,9 @@
     <line class="dimensionLine"></line>
   </svg>
 
+  <!-- Hotspot Declaratons: -->
+  <!-- ADD HOTSPOTS HERE FOLLOWING THE NAMING and NUMBERING CONVENTION ***************************************************************-->
+  
    <button id="spot-1" class="Hotspot" slot="hotspot-1" data-position="0.05786554385311728m 0.007757613450444567m 0.023007202807698676m" data-normal="0m -0.9135455240053287m 0.40673649402264017m" data-visibility-attribute="visible">
       <div id="ant-1" class="annotation">Pin</div></button>
 
@@ -100,9 +112,13 @@
   <button id="spot-11" class="hotspot" slot="hotspot-11" data-position="-0.8174355049505166m 0.03175000101327896m 0.20116408143992892m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
     <div id="ant-11" class="annotation">Expansion Foam</div></button>
 
+  <!-- ******************************************************************************************************************************* -->
+
+  <!-- Controls Division initializes the checkbox and dropdowns that allow the user to control model-viewer -->
   <div id="controls" class="dim">
     <label for="src">Product:</label>
     <select id="src" class="src_sel">
+      <!-- ADD or REMOVE option statments to edit availible models **********************************************************************************************-->
       <option value="models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb">Top Jaw, OD 1.5" tall (5002752)</option>
       <option value="models/5004015.glb">Fixed Jaw, OD 1.5" tall (5004015)</option>
       <option value="models/5004027_REV-A-MultiGripBaseJawsOD.glb">Base Jaw (5004027)</option>
@@ -122,6 +138,7 @@
       <option value="models/LG-VBX-M460-ATCD-00-00.gltf">Okuma Genos M460-VE door modification (LG-VBX-M460-ATCD-00-00)</option>
       <option value="models/AWR-1SENSOR-DOOR1.glb">CNC single-door sensor kit (AWR-1SENSOR-DOOR)</option>
       <option value="models/AWR-2SENSOR-DOOR.glb">CNC double-door sensor kit (AWR-2SENSOR-DOOR)</option>      
+      <!-- ****************************************************************************************************************************************************** -->
     </select><br>
 
     <label for="show-dimensions">Show Annotations:</label>
@@ -146,8 +163,10 @@
   </body>
 
   <script>
+
 const modelViewerParameters = document.querySelector("model-viewer#dimension-demo");
 
+<!-- This event listener assigns a default color to models without one ********************************-->
 modelViewerParameters.addEventListener("load", (ev) => {
     
   let material = modelViewerParameters.model.materials[0];
@@ -158,23 +177,25 @@ modelViewerParameters.addEventListener("load", (ev) => {
   material.pbrMetallicRoughness.setRoughnessFactor(0.2);
 
 });
-
+<!-- ************************************************************************************************** -->
 </script>
-    
+
+<!-- JavaScript for updating models and hotspots -->
 <script type="module">
   const modelViewer = document.querySelector('#dimension-demo');
 
   var ready = false;
-
+  <!-- Event listener for updating the model path -->
   modelViewer.querySelector('#src').addEventListener('input', (event) => {
     modelViewer.src = event.target.value;
   });
-  
-   modelViewer.querySelector('.unit').addEventListener('input', (event) => {
+
+  <!-- Event listener for updating the units -->
+  modelViewer.querySelector('.unit').addEventListener('input', (event) => {
     var s = document.getElementById("src").value;
     console.log(s)
     ready = false;
-    
+  <!-- This setTimeout function is used to trigger the load event listener which in turn updates the dimensions based on the set units -->
    setTimeout(() => {
       modelViewer.setAttribute('src', s);
    }, "0.1");
@@ -182,7 +203,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
    modelViewer.setAttribute('src', "awr-logo.glb")
     
   });
-  
+
+  <!-- This portion of script contols responds to the Show Annotations Checkbox -->
   const checkbox = modelViewer.querySelector('#show-dimensions');
 
   const dimElements = [...modelViewer.querySelectorAll('button'), modelViewer.querySelector('#dimLines')];
@@ -206,6 +228,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
   });
 
   // update svg
+  <!-- This function draws lines in between the dimension hotspots -->
   function drawLine(svgLine, dotHotspot1, dotHotspot2, dimensionHotspot) {
     if (dotHotspot1 && dotHotspot2) {
       svgLine.setAttribute('x1', dotHotspot1.canvasPosition.x);
@@ -232,7 +255,7 @@ modelViewerParameters.addEventListener("load", (ev) => {
     drawLine(dimLines[3], modelViewer.queryHotspot('hotspot-dot-X+Y-Z'), modelViewer.queryHotspot('hotspot-dot-X-Y-Z'), modelViewer.queryHotspot('hotspot-dim-X-Z'));
     drawLine(dimLines[4], modelViewer.queryHotspot('hotspot-dot-X-Y-Z'), modelViewer.queryHotspot('hotspot-dot-X-Y+Z'), modelViewer.queryHotspot('hotspot-dim-X-Y'));
   };
-
+  <!-- clearAnnotations hides all hotspots and annotations during a model update ****************************************************************************************************************-->
   function clearAnnotations() {
     document.getElementById("spot-1").setAttribute('class', "hidden-hotspot");
       document.getElementById("ant-1").setAttribute('class', "hidden-annotation");
@@ -257,7 +280,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
     document.getElementById("spot-11").setAttribute('class', "hidden-hotspot");
       document.getElementById("ant-11").setAttribute('class', "hidden-annotation");
   }
-
+  <!-- ****************************************************************************************************************************************************************************************** -->
+  <!-- This event listener updates all of the model dimensions and hotspots during a model change it is triggered in the API by the model src changing -->
   modelViewer.addEventListener('load', () => {
     const center = modelViewer.getBoundingBoxCenter();
     const size = modelViewer.getDimensions();
@@ -267,16 +291,17 @@ modelViewerParameters.addEventListener("load", (ev) => {
 
     clearAnnotations();
 
-    var x = document.getElementById("src").value;
-    if(x == "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb"){ 
+    var modelPath = document.getElementById("src").value;
+    <!-- These if statements set hotspots to a visible state when there corresponding model is loaded  ****************************************************************************************-->
+    if(modelPath == "models/5002752_REV-A - MultiGrip Top Jaws OD 1.5.glb"){ 
 
     }
-    if(x == "models/5004015.glb"){
+    if(modelPath == "models/5004015.glb"){
        document.getElementById("spot-1").setAttribute('class', "hotspot");
        document.getElementById("ant-1").setAttribute('class', "annotation");
 
     }
-    if(x == "models/AWR-2SENSOR-DOOR.glb"){
+    if(modelPath == "models/AWR-2SENSOR-DOOR.glb"){
 
       for (let i = 2; i <= 11; i++) {
         document.getElementById("spot-" + i).setAttribute('class', "hotspot");
@@ -284,6 +309,9 @@ modelViewerParameters.addEventListener("load", (ev) => {
       }
     }
 
+    <!-- *************************************************************************************************************************************************************************************-->
+
+    <!-- These if statements do the appropriate conversion to set units to either metric or imperial-->
     var u = document.getElementById("unit").value;
     if(u == "metric"){ 
       
@@ -373,6 +401,8 @@ modelViewerParameters.addEventListener("load", (ev) => {
     ready = true;
   });
 </script>
+
+<!-- Style parameters for controls elements and the model-viewer window-->
 <style>
   #controls {
     position: absolute;
