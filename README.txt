@@ -1,8 +1,8 @@
-#  Feel free to contact j.roach1713@gmail.com with questions
+Feel free to contact j.roach1713@gmail.com with questions
 
-### Link to Access the webpage: https://automationwithinreach.github.io/
+Link to Access the webpage: https://automationwithinreach.github.io/
 
-### Other Helpful Links:
+Other Helpful Links:
 
 model-viewer API Documentation: https://modelviewer.dev/docs/index.html
 model-viewer API Examples: https://modelviewer.dev/examples/augmentedreality/index.html
@@ -12,7 +12,7 @@ Code Structure Overview:
 The site is deployed via root/index.html which then references other resources in root to create the website.
 See the comments in index.html for more information
 
-## Instructions:
+Instructions:
 
 Note: Line number references are based on the last index.html commit on Apr 1, 2024. All the comments in index.html pertinent to these instructions will be commented with the following format:
 
@@ -22,7 +22,7 @@ Note: Line number references are based on the last index.html commit on Apr 1, 2
 
 <!-- *************************************************************** -->
 
-## How to change models:
+How to change models:
 
 - Add your model in the glb or gltf file format to the root/models directory
 
@@ -35,7 +35,7 @@ Note: Line number references are based on the last index.html commit on Apr 1, 2
 - Note: If your are changing the first model in the list then the path on line 66 will also need to be changed. 
 <model-viewer id="dimension-demo" poster="awr-logo.png" loading="auto" reveal="auto" src="CHANGE TO NEW PATH"
 	
-##How to change hotspots:
+How to change hotspots:
 
 - Open this link and upload your model: https://modelviewer.dev/editor/
 
