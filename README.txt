@@ -24,6 +24,13 @@ Note: Line number references are based on the last index.html commit on Apr 1, 2
 
 How to change models:
 
+Notes: 
+Models can have extensions .glb and .gltf, I used Onshape to convert files to gltf and reduce primitives.
+Models Containing ~400,000 primitives had a load time of ~30 seconds when network throttled to '3G Fast'. 
+Models over ~1,000,000 primitives loaded under 30 seconds on 5G network but had issues with manipulation in AR.
+I recommend testing any model with more than 300,000 primitives on a throttled 3G and 4G network. Ensure good load time and smooth rotation and translation in AR. 
+Testing under a throttled network is important, many AWR customers have facilities in areas without 5G and 4G coverage. 
+
 - Add your model in the glb or gltf file format to the root/models directory
 
 - Lines 122 to 140 all follow the same Format:  
@@ -71,4 +78,3 @@ How to change hotspots:
 	}
 
 - The new hotspots should now load and unload with the proper model selection.
-		
